@@ -12,5 +12,9 @@ namespace Singly_linked_list
         public Node next;
     }
 
+    class List
+    {
+        Node START;
+    }
 
 }
