@@ -186,6 +186,8 @@ namespace Singly_linked_list
                                 }
                             }
                             break;
+                        case '5':
+                            return;
                     }
                 }
                 catch (Exception)
