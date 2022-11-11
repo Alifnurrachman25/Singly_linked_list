@@ -73,11 +73,11 @@ namespace Singly_linked_list
             }
             else
             {
-                Console.WriteLine("\nThe records in the list are : ");
+                Console.WriteLine("\nThe records in the list are :\n ");
                 Node currentNode;
                 for (currentNode = START; currentNode != null; currentNode = currentNode.next)
 
-                    Console.Write(currentNode.rollNumber + "" + currentNode.name + "\n");
+                    Console.Write(currentNode.rollNumber + " " + currentNode.name + "\n");
 
                 Console.WriteLine();
             }
@@ -188,6 +188,11 @@ namespace Singly_linked_list
                             break;
                         case '5':
                             return;
+                        default:
+                            {
+                                Console.WriteLine("\nInvalid Option");
+                                break;
+                            }
                     }
                 }
                 catch (Exception)
