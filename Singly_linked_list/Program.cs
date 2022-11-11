@@ -10,7 +10,6 @@ namespace Singly_linked_list
         public int rollNumber;
         public string name;
         public Node next;
-
     }
 
 
