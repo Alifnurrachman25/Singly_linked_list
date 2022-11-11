@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.IO;
 
 namespace Singly_linked_list
 {
@@ -64,6 +64,58 @@ namespace Singly_linked_list
             /*once the above for loop is executed, prev and current are positioned in such a manner that position for the new node*/
             newnode.next = current;
             previous.next = newnode;
+        }
+        public void traverse()
+        {
+            if (listEmpty())
+            {
+                Console.WriteLine("\nList is empty.\n");
+            }
+            else
+            {
+                Console.WriteLine("\nThe records in the list are : ");
+                Node currentNode;
+                for (currentNode = START; currentNode != null; currentNode = currentNode.next)
+
+                    Console.Write(currentNode.rollNumber + "" + currentNode.name + "\n");
+
+                Console.WriteLine();
+            }
+        }
+        public bool delNode(int nim)
+        {
+            Node previous, current;
+            previous = current = null;
+            //check if the spesified node is present in the list or not
+            if (Search(nim, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
+            if (current == START)
+                START = START.next;
+            return true;
+        }
+
+        public bool Search(int nim, ref Node previous, ref Node current)
+        {
+            previous = START;
+            current = START;
+
+            while ((current != null) && (nim != current.rollNumber))
+            {
+                previous = current;
+                current = current.next;
+            }
+            if(current == null)
+                return (false);
+            else
+                return (true);
+        }
+        public bool listEmpty()
+        {
+            if (START == null)
+                return true;
+            else
+                return false;
         }
     }
 
