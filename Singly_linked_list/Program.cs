@@ -139,7 +139,11 @@ namespace Singly_linked_list
                     char ch = Convert.ToChar(Console.ReadLine());
                     switch (ch)
                     {
-
+                        case '1':
+                            {
+                                obj.addNote();
+                            }
+                            break;
                     }
                 }
                 catch (Exception)
